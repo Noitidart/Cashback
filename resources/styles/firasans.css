@@ -1,0 +1,6 @@
+@font-face {
+    font-family: 'FiraSans';
+    src: url('chrome://cashback/content/resources/styles/FiraSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -117,8 +117,8 @@ function obsHandler_iframeBodyHeight(aSubject, aTopic, aData) {
 	
 	if (aData != 0) {
 		// its a real (re)load while panel is showing, not the initial load on panel create
-		panelview_onViewShowing_load.style.height = aData + 'px';
-		iframe_onViewShowing_load.style.height = aData + 'px';
+/* 		panelview_onViewShowing_load.style.height = aData + 'px';
+		iframe_onViewShowing_load.style.height = aData + 'px'; */
 	}
 	
 	panelview_onViewShowing_load = null;
@@ -189,7 +189,7 @@ var windowListener = {
 			var domWinUtils = aDOMWindow.QueryInterface(Ci.nsIInterfaceRequestor).getInterface(Ci.nsIDOMWindowUtils);
 			domWinUtils.removeSheet(cui_cssUri, domWinUtils.AUTHOR_SHEET);
 			
-			var panel = aDOMWindow.document.getElementById('cashback-view-panel');
+			var panel = aDOMWindow.document.getElementById('PanelUI-cashbackView');
 			if (panel){
 				panel.parentNode.removeChild(panel);
 				console.error('succesfully removed panel')
@@ -210,7 +210,7 @@ function startup(aData, aReason) {
 	CustomizableUI.createWidget({
 		id: 'cui_cashback',
 		type: 'view',
-		viewId : 'cashback-view-panel',
+		viewId : 'PanelUI-cashbackView',
 		defaultArea: CustomizableUI.AREA_NAVBAR,
 		label: myServices.sb.GetStringFromName('cui_cashback_lbl'),
 		tooltiptext: myServices.sb.GetStringFromName('cui_cashback_tip'),
@@ -224,23 +224,27 @@ function startup(aData, aReason) {
 			var aDOMWin = aDoc.defaultView;
 			
 			var doc = aDOMWin.document;
+			
+
+			
 			var panel = doc.createElementNS(NS_XUL, 'panelview');
+			var vbox = doc.createElementNS(NS_XUL, 'vbox');
 			var iframe = doc.createElementNS(NS_HTML, 'iframe');
 			 
-			panel.setAttribute('id', 'cashback-view-panel');
-			panel.addEventListener('popuphiding', function(e) {
-				e.stopPropagation();
-				e.preventDefault();
-				e.returnValue = false;
-				return false;
-			}, false);
+			panel.setAttribute('id', 'PanelUI-cashbackView');
+			panel.setAttribute('flex', '1');
+			vbox.setAttribute('class', 'panel-subview-body');
+			vbox.setAttribute('style', 'overflow:visible;');
 			
-			iframe.setAttribute('id', 'cashback-view-iframe');
+			iframe.setAttribute('id', 'cashback-panel-iframe');
 			iframe.setAttribute('type', 'content');
+			iframe.setAttribute('did_init', '1');
 			iframe.setAttribute('src', core.addon.path.content + 'view.xhtml');
-			iframe.setAttribute('style', 'border:0;');
-			 
-			panel.appendChild(iframe);
+			iframe.setAttribute('style', 'border:0;width: 100%; height: 482px;');
+
+			vbox.appendChild(iframe);
+			panel.appendChild(vbox);
+			
 			doc.getElementById('PanelUI-multiView').appendChild(panel);
 			
 		},
@@ -251,6 +255,17 @@ function startup(aData, aReason) {
 			// valid.
 			panelview_onViewShowing_load = aEvent.target;
 			iframe_onViewShowing_load = panelview_onViewShowing_load.childNodes[0];
+
+			/* try {
+				var bodyHeight = aIFrame.contentWindow.wrappedJSObject.getBodyHeight();
+				if (bodyHeight != 0) {
+					panelview_onViewShowing_load.style.height = bodyHeight + 'px';
+					iframe_onViewShowing_load.style.height = bodyHeight + 'px';
+					console.info('extern got bodyHeight:', bodyHeight);
+				}
+			} catch (ex) {
+				console.error('ex occured while trying to set body height without waiting:', ex);
+			} */
 			
 			var timer = Cc['@mozilla.org/timer;1'].createInstance(Ci.nsITimer);
 			timer.initWithCallback({
@@ -292,7 +307,7 @@ function startup(aData, aReason) {
 		onViewHiding: function(aEvent) {
 			console.log('view now hiding');
 			var aDOMWin = aEvent.target.ownerDocument.defaultView;
-			aDOMWin.document.getElementById('cashback-view-iframe').contentDocument.body.textContent = 'panel closed';
+			//aDOMWin.document.getElementById('cashback-view-iframe').contentDocument.body.textContent = 'panel closed';
 		}
 	});
 	

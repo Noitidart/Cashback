@@ -1,3 +1,13 @@
+html {
+	outline: medium none;
+	padding: 0px;
+	font-family: sans-serif;
+}
+
+body {
+	margin: 0;
+}
+
 .pkt_ext_containersignup {
 	background-color: #EBEBEB;
 	color: #333;
@@ -78,4 +88,124 @@
     font-size: 12px;
     max-width: 320px;
     margin-top: 15px;
+}
+
+.pkt_ext_containersignup .signup-btn-firefox {
+    min-width: 14.5em;
+    position: relative;
+    padding: 0px;
+}
+
+.pkt_ext_containersignup .btn {
+    background-color: #0096DD;
+    border: 1px solid #0095DD;
+    border-radius: 2px;
+    color: #FFF;
+    display: inline-block;
+    font-family: "FiraSans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1;
+    margin: 0px;
+    padding: 11px 45px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0px -1px 0px rgba(142, 4, 17, 0.5);
+    transition: background-color 0.1s linear 0s;
+    width: auto;
+}
+
+.pkt_ext_containersignup a {
+    color: #4C8FD0;
+}
+
+.pkt_ext_containersignup a:hover {
+    color: #3076B9;
+}
+
+a {
+    color: #0095DD;
+    margin: 0px;
+    outline: medium none;
+    padding: 0px;
+    text-decoration: none;
+}
+
+a {
+    background-color: transparent;
+}
+
+.pkt_ext_containersignup .signup-btn-firefox .logo {
+    background: transparent url("chrome://cashback/content/resources/images/signup_firefoxlogo@1x.png") no-repeat scroll center center;
+    height: 2.6em;
+    left: 10px;
+    margin: 0px;
+    padding: 0px;
+    width: 22px;
+    position: absolute;
+}
+
+.pkt_ext_containersignup .signup-btn-firefox .text {
+    color: #FFF;
+}
+
+.pkt_ext_containersignup .signup-btn-firefox .text {
+    display: inline-block;
+    padding: 0.8em 1.625em;
+    position: relative;
+    text-shadow: none;
+    white-space: nowrap;
+}
+
+.pkt_ext_containersignup .signup-btn-email {
+    position: relative;
+    z-index: 10;
+}
+
+.pkt_ext_containersignup .btn-secondary {
+    background-color: #FBFBFB;
+    border-color: #C1C1C1;
+    color: #444;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5);
+}
+
+.pkt_ext_containersignup .btn:hover {
+    background-color: #008ACB;
+    color: #FFF;
+    text-decoration: none;
+}
+
+.pkt_ext_containersignup .btn-secondary:hover, .pkt_ext_containersignup .btn-important:hover {
+    background-color: #F6F6F6;
+    color: #222;
+}
+
+.pkt_ext_containersignup .signup-btn-firefox, .pkt_ext_containersignup .signup-btn-email, .pkt_ext_containersignup .signupinterim-btn-login, .pkt_ext_containersignup .signupinterim-btn-signup, .pkt_ext_containersignup .forgot-btn-submit, .pkt_ext_containersignup .forgotreset-btn-change {
+    min-width: 12.125em;
+    padding: 0.8em 1.1875em;
+    box-sizing: content-box;
+}
+
+.pkt_ext_containersignup .signup-btn-firefox {
+    min-width: 14.5em;
+    position: relative;
+    padding: 0px;
+}
+
+.pkt_ext_containersignup {
+    background-color: #EBEBEB;
+    color: #333;
+    display: block;
+    font-size: 16px;
+    font-family: "FiraSans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    text-align: center;
+}
+
+.pkt_ext_signup_overflow .pkt_ext_introimg {
+    background-size: 200px 98px;
+    height: 98px;
+    width: 200px;
 }

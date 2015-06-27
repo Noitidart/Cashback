@@ -24,12 +24,10 @@ const core = {
 	}
 };
 
-/*
 function getBodyHeight() {
 	console.info('from within:', document.body.offsetHeight);
-	return document.body.offsetHeight;
+	return document.documentElement.offsetHeight;
 }
-*/
 
 document.addEventListener('DOMContentLoaded', function() {
 	//console.info('from load:', document.body.offsetHeight);
