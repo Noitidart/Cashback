@@ -1,0 +1,12 @@
+@-moz-document url("chrome://browser/content/browser.xul") {
+	#cui_cashback {
+		list-style-image: url('chrome://cashback/content/resources/images/icon16.png');
+	}
+	#cui_foxspeak:hover {
+		filter: grayscale(0);
+	}
+	#cui_foxspeak[cui-areatype="menu-panel"],
+	toolbarpaletteitem[place="palette"] > #cui_cashback {
+		list-style-image: url('chrome://cashback/content/resources/images/icon32.png');
+	}
+}
