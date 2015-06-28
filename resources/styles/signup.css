@@ -74,12 +74,12 @@
 .pkt_ext_containersignup .pkt_ext_logo {
     background: url(chrome://cashback/content/resources/images/pocketlogo@1x.png) center bottom no-repeat;
     display: block;
-    height: 32px;
+    height: 100px;
     margin: 0 auto 15px;
     padding-top: 25px;
     position: relative;
     text-indent: -9999px;
-    width: 123px;
+    width: 199px;
 }
 @media (min-resolution: 1.1dppx) {
     .pkt_ext_containersignup .pkt_ext_logo {
@@ -211,8 +211,8 @@
 /*=Buttons
 --------------------------------------------------------------------------------------- */
 .pkt_ext_containersignup .btn {
-    background-color: #0096dd;
-    border: 1px solid #0095dd;
+    background-color: #F80;
+    border: 1px solid #ccc;
     border-radius: 2px;
     color: #fff;
     display: inline-block;
@@ -242,7 +242,7 @@
     padding: 5px 15px 4px;
 }
 .pkt_ext_containersignup .btn:hover {
-    background-color: #008acb;
+    background-color: #00A0FF;
     color: #fff;
     text-decoration: none;
 }
@@ -313,11 +313,10 @@
 /*=Overflow mode
 --------------------------------------------------------------------------------------- */
 .pkt_ext_signup_overflow .pkt_ext_tagline {
-    margin-bottom: 1em;
-    padding: 0 1em;
+    margin-bottom: 0.2em;
+    padding: 0 0.2em;
 }
 .pkt_ext_signup_overflow .pkt_ext_introimg {
-    background-size: 200px 98px;
     height: 98px;
     width: 200px;
 }

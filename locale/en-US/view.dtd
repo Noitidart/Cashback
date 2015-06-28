@@ -1,2 +1,6 @@
 <!ENTITY cashback.view.title 'Cashback'>
 <!ENTITY cashback.view.desc 'Cashback Description'>
+<!ENTITY cashback.view.todays-coupons 'Todays Coupons'>
+<!ENTITY cashback.view.my-account 'My Account'>
+<!ENTITY cashback.view.featured-stores 'Featured Stores'>
+<!ENTITY cashback.view.search 'Search'>

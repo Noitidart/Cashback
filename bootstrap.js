@@ -240,7 +240,7 @@ function startup(aData, aReason) {
 			iframe.setAttribute('type', 'content');
 			iframe.setAttribute('did_init', '1');
 			iframe.setAttribute('src', core.addon.path.content + 'view.xhtml');
-			iframe.setAttribute('style', 'border:0;width: 100%; height: 482px;');
+			iframe.setAttribute('style', 'border:0;width: 100%; height: 700px;');
 
 			vbox.appendChild(iframe);
 			panel.appendChild(vbox);
